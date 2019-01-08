@@ -9,22 +9,37 @@
 <div th:include="fragments/layout :: header-page"></div>
 
 <div class="ui modal">
-    <div class="Header">
-        Modification/Ajout d'un genre
-    </div>
-    <div class="ui padded form">
-        <input type="hidden" name="id" id="id-genre">
-        <div class="fourteen wide field">
-            <input type="text" name="name" th:value="*{name}" id="name-genre">
-        </div>
-        <div class="actions">
 
-                <div class="circular ui green icon button" onclick="validForm()">
-                    <i class="white check icon icon"></i>
-                </div>
-                <div class="circular ui icon red button" onclick="deletElementForm()">
-                    <i class="white close icon icon"></i>
-                </div>
+    <div class="Header" style="padding: 15px ">
+
+        <a onclick="close_window()"><i class="x icon" style="float: right;padding: 3px; cursor: pointer; "></i></a>
+        <h1 class="ui header">Modification/Ajout d'un genre</h1>
+
+    </div>
+   <div class="ui padded form" >
+        <input type="hidden" name="id" id="id-genre">
+       <div class="fourteen wide field" style="padding: 15px;">
+        <!--<div class="fourteen wide field" style="padding: 15px;">
+            <input type="text" name="name" th:value="*{name}" id="name-genre">
+        </div>-->
+        <div class="ui left corner labeled input">
+            <input type="text" name="name" th:value="*{name}" id="name-genre">
+            <div class="ui left corner label">
+                <i class="asterisk icon"></i>
+            </div>
+        </div>
+        <div class="actions" style="padding: 15px;float: right;margin-right: -132px;">
+
+            <div class="circular ui green icon button" onclick="validForm()">
+                <i class="white check icon icon"></i>
+            </div>
+            <div class="circular ui icon red button" onclick="deletElementForm()">
+                <i class="white close icon icon"></i>
+            </div>
+            <div class="circular ui icon black button" onclick="reload()" >
+                <i class="redo icon"></i>
+            </div>
+        </div>
 
         </div>
     </div>
@@ -135,6 +150,10 @@
         console.log(errorThrown);
     }
 
+function close_window() {
+    $('.ui.modal').modal('hide');
+}
+  
 
 </script>
 </body>
