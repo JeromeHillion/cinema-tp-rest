@@ -18,7 +18,7 @@ public class GenreRestController {
     /**
      * Constructeur permettant l'injection de beans
      * @param genreManager le service de gestion du Genre du film
-     */
+     **/
     public GenreRestController(GenreManager genreManager){
         this.genreManager=genreManager;
         assert(genreManager != null);
